@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "duketestk8s-d1a6"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "duketestk8s-d1a6"
+  template:
+    metadata:
+      labels:
+        app: "duketestk8s-d1a6"
+    spec:
+      containers:
+        - name: "duketestk8s-d1a6"
+          image: "testforechkingowner.azurecr.io/duketestk8s"
+          ports:
+          - containerPort: 80
